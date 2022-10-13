@@ -1,3 +1,5 @@
+import { ProductService } from './../product/product.service';
+import { CartService } from './../cart/cart.service';
 import { UserModule } from './../user/user.module';
 import { PrismaService } from './../prisma/prisma.service';
 import { UserService } from './../user/user.service';
@@ -23,7 +25,10 @@ import { JwtStrategy } from './strategies/jwt.strategy';
     PrismaService,
     LocalStrategy,
     JwtStrategy,
+    CartService,
+    ProductService,
   ],
+  exports: [AuthService],
   controllers: [AuthController],
 })
 export class AuthModule {}
